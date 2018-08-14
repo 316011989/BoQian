@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_touserlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击测试代码异常" />
+
+    <TextView
+        android:id="@+id/tv_queuetest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="进队列顺序为数字123,连续点击可按顺序pop,继续点击可循环" />
+    <TextView
+        android:id="@+id/tv_filelist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="进入文件浏览" />
+</LinearLayout>
