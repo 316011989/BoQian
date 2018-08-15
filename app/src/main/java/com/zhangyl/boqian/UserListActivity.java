@@ -18,20 +18,21 @@ public class UserListActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-            ImageView iv = new ImageView(this);
-            if (sBackground == null) {
-                sBackground = getResources().getDrawable(R.drawable.ic_launcher_background);
-            }
-            iv.setImageDrawable(sBackground);
-            setContentView(iv);
-            String usersJson = getSharedPreferences("userlist",
-                    Context.MODE_PRIVATE).getString("users", null);
-            List<User> users = JSON.parseArray(usersJson, User.class);
-            //沒有判空
-        if ( users != null)
+        ImageView iv = new ImageView(this);
+        if (sBackground == null) {
+            sBackground = getResources().getDrawable(R.drawable.ic_launcher_background);
+        }
+        iv.setImageDrawable(sBackground);
+        setContentView(iv);
+        String usersJson = getSharedPreferences("userlist",
+                Context.MODE_PRIVATE).getString("users", null);
+        List<User> users = JSON.parseArray(usersJson, User.class);
+        //沒有判空
+        if (users != null)
             Toast.makeText(this, "user count is " + users.size(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "user count is " + (users != null ? users.size() : 0), Toast.LENGTH_SHORT).show();
         else
-            Toast.makeText(this, "users为空" , Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "users空指针异常", Toast.LENGTH_SHORT).show();
     }
 }
 
